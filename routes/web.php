@@ -14,6 +14,11 @@ Route::get('/checkout/{id}', function($id){
 	return view('store.checkout', compact('id'));
 });
 
+Route::post('/pagseguro/notification', [
+    'uses' => '\laravel\pagseguro\Platform\Laravel5\NotificationController@notification',
+    'as' => 'pagseguro.notification',
+]);	
+
 Route::post('/checkout/{id}', function($id){
 
 	$data = [
@@ -55,7 +60,7 @@ Route::post('/checkout/{id}', function($id){
 			'cost' => 30.4,
 		],
 		'sender' => [
-			'email' => 'c92859879617463884392@sandbox.pagseguro.com.br',
+			'email' => 'joao@sandbox.pagseguro.com.br',
 			'name' => 'Isaque de Souza Barbosa',
 			'documents' => [
 				[
@@ -69,19 +74,18 @@ Route::post('/checkout/{id}', function($id){
 	];
 
 	$checkout = PagSeguro::checkout()->createFromArray($data);
-	$checkout = PagSeguro::checkout()->createFromArray($data);
 	$credentials = PagSeguro::credentials()->get();
 		
-		print_r($credentials);
+		//print_r($credentials);
 
 	$information = $checkout->send($credentials); 
 	// Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
 	
-	/*if ($information) {
+	if ($information) {
 		print_r($information->getCode());
 		print_r($information->getDate());
 		print_r($information->getLink());
-	}*/
+	}
 
 return $data;
 

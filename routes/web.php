@@ -87,6 +87,4 @@ Route::post('/checkout/{id}', function($id){
 		print_r($information->getLink());
 	}
 
-return $data;
-
 });

@@ -8,8 +8,9 @@ return [
      * Coloque abaixo as informações do seu cadastro no PagSeguro
      */
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
-        'email' => 'joaopauloaferreira23@gmail.com',
-        'token' => '80C63C21F6ED4F98BB6F8B0179143676',
+        'email' => "testedeaplicacao123@gmail.com",
+        'token' => "0B2829F7CE8444A7ABB4A8D162B6DD79",
+        //Aqui devem ser colocadas as credenciais da conta no pagseguro
     ],
 
     /*

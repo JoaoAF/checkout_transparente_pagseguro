@@ -19,49 +19,49 @@ Route::post('/pagseguro/notification', [
     'as' => 'pagseguro.notification',
 ]);	
 
-Route::post('/checkout/{id}', function($id){
+Route::post('/checkout', function()){
 
 	$data = [
 		'items' => [
 			[
 				'id' => '18',
-				'description' => 'Item Um',
+				'description' => 'Massagem',
 				'quantity' => '1',
-				'amount' => '1.15',
-				'weight' => '45',
-				'shippingCost' => '3.5',
+				'amount' => '100',
+				'weight' => '0',
+				'shippingCost' => '0',
 				'width' => '50',
 				'height' => '45',
 				'length' => '60',
 			],
 			[
 				'id' => '19',
-				'description' => 'Item Dois',
+				'description' => 'Massagem II',
 				'quantity' => '1',
-				'amount' => '3.15',
+				'amount' => '100',
 				'weight' => '50',
-				'shippingCost' => '8.5',
+				'shippingCost' => '0',
 				'width' => '40',
 				'height' => '50',
-				'length' => '80',
+				'length' => '60',
 			],
 		],
 		'shipping' => [
 			'address' => [
 				'postalCode' => '06410030',
-				'street' => 'Rua Leonardo Arruda',
-				'number' => '12',
-				'district' => 'Jardim dos Camargos',
-				'city' => 'Barueri',
-				'state' => 'SP',
+				'street' => 'Rua dos bobos',
+				'number' => '0',
+				'district' => 'Parque 7 anões',
+				'city' => 'Alicelandia',
+				'state' => 'CE',
 				'country' => 'BRA',
 			],
-			'type' => 2,
-			'cost' => 30.4,
+			'type' => 2,                                  
+			'cost' => 30,
 		],
 		'sender' => [
 			'email' => 'joao@sandbox.pagseguro.com.br',
-			'name' => 'Isaque de Souza Barbosa',
+			'name' => 'João Paulo de Araújo Ferreira',
 			'documents' => [
 				[
 					'number' => '01234567890',
@@ -69,7 +69,7 @@ Route::post('/checkout/{id}', function($id){
 				]
 			],
 			'phone' => '11985445522',
-			'bornDate' => '1988-03-21',
+			'bornDate' => '1998-03-23',
 		]
 	];
 
